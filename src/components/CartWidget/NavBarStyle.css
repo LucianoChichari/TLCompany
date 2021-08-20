@@ -1,0 +1,55 @@
+.navbar  {
+display: flex;
+flex-direction: row;
+
+}
+
+.cartlogo{
+    size: 50px;
+}
+.catalogtext{
+writing-mode: horizontal-tb;
+flex: 1;
+text-align: center;
+margin-left: 10px;
+color: inherit;
+flex-direction: row;
+text-decoration: inherit;
+outline: none;
+margin-right: 30px;
+}
+.navbar-item  {
+float: right;
+writing-mode: horizontal-tb;
+flex: 1;
+align-items: center;
+margin-left: 10px;
+color: inherit;
+flex-direction: row;
+text-decoration: inherit;
+text-transform: uppercase;
+outline: none;
+margin-right: 30px;
+}
+
+.tlc-item  {
+    writing-mode: horizontal-tb;
+    float: left;
+    justify-content: space-between;
+    flex: 1;
+    align-items: center;
+    margin-left: 30px;
+    margin-right: 60px;
+    color: inherit;
+    flex-direction: row;
+    text-decoration: inherit;
+    text-transform: uppercase;
+    outline: none;
+    }
+.separadornav{
+  width: 100%;
+  border: none;
+  height: 2px;
+  margin-top: 2px;
+  background-color: black;
+}
