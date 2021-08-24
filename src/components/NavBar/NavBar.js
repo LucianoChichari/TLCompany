@@ -5,7 +5,7 @@ import CartWidget from '../CartWidget/CartWidget';
 const NavBar = () => {
     return (
         
-        <section classname="navbar">
+        <section classame="navbar">
           <a href="/cat1" className="navbar-item">Home </a> 
           <a href="/cat2" className="navbar-item">About </a>
           <a href="/cat3" className="navbar-item">Shop </a>

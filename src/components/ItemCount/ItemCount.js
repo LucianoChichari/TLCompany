@@ -1,8 +1,8 @@
 import React from 'react';
 import {Container,Row, Button, Card} from "react-bootstrap";
-import { Items } from '../Items/Items';
+import './ItemCount.css';
 
-const ItemCount = () => {
+export function ItemCount(item){
     const [counter, setCounter] = React.useState(0);
     //const {addToCart} = useContext(CartContext)
     
@@ -23,8 +23,11 @@ const ItemCount = () => {
             {counter}
           </Card.Text>
           
-          <Button onClick={onAdd} disabled={counter >= Items.stock} className="btn btn-outline-secondary border-0" >+</Button>
-          <Button onClick={onRemove}  disabled={counter <= 0} className="btn btn-outline-secondary border-0">-</Button>
+          <Button onClick={onAdd} disabled={counter >= item.stock} className="btn btn-light btn-outline-secondary border-0" >+</Button>
+          <Button onClick={onRemove}  disabled={counter <= 0} className="btn btn-light btn-outline-secondary border-0">-</Button>
+          
+          <Button className="btn btn-light btn-outline-secondary border-0">Agregar al carrito</Button>
+                
         </Row>
         </Container>
     )
