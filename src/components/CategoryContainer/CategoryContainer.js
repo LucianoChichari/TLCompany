@@ -3,13 +3,14 @@ import {Container,Row} from "react-bootstrap"
 import { ItemList } from "../Items/ItemList";
 
 
-function ItemListContainer() {
+function CategoryContainer({match}) {
     const [items, setItems] = useState([])
+    let id = match.params.id;
     useEffect(() =>{
-      fetch('https://fakestoreapi.com/products')
+      fetch('https://fakestoreapi.com/products/category/'+id)
             .then(res=>res.json())
             .then(data=>setItems(data))
-    },[])
+    },[id])
     return <div>
     <Container className="justify-content-center">
       <Row>
@@ -20,4 +21,4 @@ function ItemListContainer() {
     </div> 
   }
 
-export default ItemListContainer
+export default CategoryContainer

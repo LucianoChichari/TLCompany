@@ -10,7 +10,7 @@ export function ItemDetail({items}){
           <Card className="ProductView" style={{ width: "18rem", margin:"3rem"}}>
             <Card.Body>
             <Card.Title>{items.title}</Card.Title>
-            <Link to={`/detail/${items.id}`}><img className="card-img-top" src={items.image} alt="Card image cap" /></Link>
+            <img className="card-img-top" src={items.image} alt="Card image cap" />
               
               <Card.Subtitle className="Precio" style={{ textAlign:"center"}}>
               ${items.price}
