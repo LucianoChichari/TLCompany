@@ -2,8 +2,19 @@ import {Card, Button} from "react-bootstrap";
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
 import "./Items.css"
+import React,{useState, useContext} from "react";
+import { CartContext } from '../Context/context';
 
 export function ItemDetail({items}){
+    const {addCart} = useContext(CartContext)
+    const [valorinterno, setValor] = useState(0);
+
+    const onAdd = (value) =>{
+      setValor(value);
+      console.log(value)
+      addCart(items, value)
+
+    }
 
       return (
           
@@ -21,7 +32,7 @@ export function ItemDetail({items}){
               </Card.Text>           
 
             </Card.Body>
-            <ItemCount></ItemCount>
+            <ItemCount onAdd = {onAdd} ></ItemCount>
           </Card>
         
 )

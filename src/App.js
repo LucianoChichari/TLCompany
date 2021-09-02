@@ -5,13 +5,14 @@ import NavBar from './components/NavBar/NavBar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ItemDetailContainer from './components/Items/ItemDetailContainer';
 import CategoryContainer from './components/CategoryContainer/CategoryContainer';
+import { Cartprovider } from './components/Context/context';
 
 const App = () => {
     return (
         
         
 
-        
+        <Cartprovider>
         <Router>
         <NavBar></NavBar>
             <Switch>
@@ -20,7 +21,7 @@ const App = () => {
               <Route path="/category/:id" component={CategoryContainer}></Route>
             </Switch>
         </Router>
-        
+        </Cartprovider>
       
     );
 }
