@@ -9,31 +9,41 @@ export function ItemDetail({items}){
     const {addCart} = useContext(CartContext)
     const [valorinterno, setValor] = useState(0);
 
-    const onAdd = (value) =>{
-      setValor(value);
-      console.log(value)
-      addCart(items, value)
+    const onAdd = () =>{
+      console.log("ITEMS: ",items)
+      setValor();
+      console.log()
+      
 
-    }
+  }
+  
+return (
+<div class="card text-center">
+          <div class="card-header">
+                {items.title}
+          </div>
 
-      return (
-          
-          <Card className="ProductView" style={{ width: "18rem", margin:"3rem"}}>
-            <Card.Body>
-            <Card.Title>{items.title}</Card.Title>
-            <img className="card-img-top" src={items.image} alt="Card image cap" />
-              
-              <Card.Subtitle className="Precio" style={{ textAlign:"center"}}>
-              ${items.price}
-              </Card.Subtitle>
+          <div class="card-body">
+            
+                <img className="card-img-top" src={items.image} alt="Card image cap" style={{ width: "18rem", margin:"3rem"}}/>
+                <h5 class="card-title">${items.price}</h5>
+                
+                <ItemCount onAdd = {onAdd} item = {items} ></ItemCount>
 
-              <Card.Text>
-                  {items.description}
-              </Card.Text>           
+          </div>
 
-            </Card.Body>
-            <ItemCount onAdd = {onAdd} ></ItemCount>
-          </Card>
+          <div class="card">
+                  <div class="card-header">
+                     Descripcion del producto
+                  </div>
+          <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                <p class="card-body">{items.description}</p>
+                <footer class="blockquote-footer"><cite title="Source Title">The Lazy Co. </cite></footer>
+                  </blockquote>
+</div>
+</div>
+</div>
         
 )
 }

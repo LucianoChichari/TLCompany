@@ -1,13 +1,30 @@
-import React from 'react';
+
 import './NavBarStyle.css';
 import logo from './carrito-de-compras.png';
+import React,{useEffect, useContext, useState} from "react";
+import {CartContext} from "../Context/context"
 
 const CartWidget = () => {
-    return (     
+    
+
+
+    const {counteritems} = useContext(CartContext); 
+    useEffect(()=>{
+        console.log("COUNTER ITEMS DEL US EFECT: ",counteritems)
+    })
+
+    return (<div> 
         
-        <img src={logo} alt="Logo" width={15} height={15}/>
-        
-    )
-}
+            {
+               counteritems!==0 && <> 
+                <img src={logo} alt="Logo" width={15} height={15}/>
+                <span>
+                    {counteritems}
+                </span>
+                </>
+                }
+
+    </div>
+    )}
 
 export default CartWidget

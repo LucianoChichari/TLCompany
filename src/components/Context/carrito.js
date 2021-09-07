@@ -1,9 +1,10 @@
 class carrito {
-    constructor(id , cantidad, nombre, precio){
+    constructor(id , quantity, nombre, precio, foto){
         this.id = id;
-        this.cantidad = cantidad;
+        this.quantity = quantity;
         this.nombre = nombre;
         this.precio = precio;
+        this.foto = foto;
     }
 }
 export default carrito

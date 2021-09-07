@@ -9,19 +9,23 @@ export function Items({items}){
       return (
           
           <Card className="ProductView" style={{ width: "18rem", margin:"3rem"}}>
+
             <Card.Body>
-            <Card.Title>{items.title}</Card.Title>
-            <Link to={`/detail/${items.id}`}><img className="card-img-top" src={items.image} alt="Card image cap" /></Link>
-              <Card.Subtitle className="Precio" style={{ textAlign:"center"}}>
-              ${items.price}
-              </Card.Subtitle>
+                  <Card.Title class="col-2 text-truncate" style={{ width: "15rem"}}>{items.title}</Card.Title>
+                        <Link to={`/detail/${items.id}`}>
+                        <img className="card-img-top" src={items.image} alt="Card image cap" style={{ width: "15rem", height: "18rem"}}/>
+                        </Link>
+
+                        <Card.Subtitle className="Precio" style={{ textAlign:"center"}}>  
+                                Precio: ${items.price}
+                        </Card.Subtitle>
+
             </Card.Body>
+
             <ItemCount></ItemCount>
+
           </Card>
         
 )
 }
 
-//<Card.Subtitle className="mb-2 text-muted">
-//{items.description}
-//</Card.Subtitle>
