@@ -3,6 +3,7 @@ import './NavBarStyle.css';
 import logo from './carrito-de-compras.png';
 import React,{useEffect, useContext, useState} from "react";
 import {CartContext} from "../Context/context"
+import { Link } from "react-router-dom";
 
 const CartWidget = () => {
     
@@ -17,10 +18,16 @@ const CartWidget = () => {
         
             {
                counteritems!==0 && <> 
-                <img src={logo} alt="Logo" width={15} height={15}/>
-                <span>
+               <Link to="/cart">
+                <a href="#" className="float">
+                <i className="my-float"></i>
+                <i> <img src={logo} alt="Logo" width={15} height={15}/>
+                <h5 className="cambiarmargentop" >
                     {counteritems}
-                </span>
+                </h5> </i>
+
+                </a>
+                </Link>
                 </>
                 }
 
@@ -28,3 +35,4 @@ const CartWidget = () => {
     )}
 
 export default CartWidget
+

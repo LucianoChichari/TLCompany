@@ -1,4 +1,4 @@
-
+import CartWidget from '../CartWidget/CartWidget';
 import "./CartItem.css"
 import React,{useEffect, useContext} from "react";
 const CartItem = ({item, cartDelete, cartRemove, cartAddOne}) => {
@@ -66,6 +66,11 @@ const CartItem = ({item, cartDelete, cartRemove, cartAddOne}) => {
             </div>
         </div>
     </div>
+    <a href="#" class="float">
+<i class="fa fa-plus my-float"></i>
+<i>      <CartWidget/> </i>
+
+</a>
 </div>
     )
 }

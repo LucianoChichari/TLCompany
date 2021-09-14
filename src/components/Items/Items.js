@@ -3,12 +3,13 @@ import {Card, Button} from "react-bootstrap";
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
 import "./Items.css"
+import CartWidget from '../CartWidget/CartWidget';
+
 
 export function Items({items}){
-
+//items.title/items.id/items.image/items.price
       return (
-          
-          <Card className="ProductView" style={{ width: "18rem", margin:"3rem"}}>
+            <Card className="ProductView" style={{ width: "18rem", margin:"3rem"}}>
 
             <Card.Body>
                   <Card.Title class="col-2 text-truncate" style={{ width: "15rem"}}>{items.title}</Card.Title>
@@ -22,10 +23,13 @@ export function Items({items}){
 
             </Card.Body>
 
-            <ItemCount></ItemCount>
-
+            
+            <CartWidget></CartWidget>
           </Card>
+          
         
-)
-}
+        )}
+         
+
+
 

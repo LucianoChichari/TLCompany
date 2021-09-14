@@ -31,7 +31,10 @@ text-transform: uppercase;
 outline: none;
 margin-right: 30px;
 }
-
+.navbarNav{
+  float: right;
+  margin-left: 10px;
+}
 .tlc-item  {
     writing-mode: horizontal-tb;
     float: left;

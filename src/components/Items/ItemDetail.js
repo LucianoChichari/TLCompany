@@ -2,21 +2,27 @@ import {Card, Button} from "react-bootstrap";
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
 import "./Items.css"
-import React,{useState, useContext} from "react";
+import React,{useState, useContext, useEffect} from "react";
 import { CartContext } from '../Context/context';
+import CartWidget from '../CartWidget/CartWidget';
+import { db } from "../../firebase";
+import { collection, query, getDocs, doc, getDoc } from "firebase/firestore";
 
 export function ItemDetail({items}){
-    const {addCart} = useContext(CartContext)
-    const [valorinterno, setValor] = useState(0);
 
-    const onAdd = () =>{
-      console.log("ITEMS: ",items)
-      setValor();
-      console.log()
+      const [item, setItem] = useState(items)
+      const {addCart} = useContext(CartContext)
+      const [valorinterno, setValor] = useState(0);
+
+      const onAdd = () =>{
+            console.log("ITEMS: ",items)
+            setValor();
+            console.log()
       
 
   }
-  
+
+  console.log("ITEMS: ",item)
 return (
 <div class="card text-center">
           <div class="card-header">
@@ -41,8 +47,14 @@ return (
                 <p class="card-body">{items.description}</p>
                 <footer class="blockquote-footer"><cite title="Source Title">The Lazy Co. </cite></footer>
                   </blockquote>
+
+
 </div>
+
 </div>
+
+<CartWidget></CartWidget>
+
 </div>
         
 )

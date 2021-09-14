@@ -3,7 +3,13 @@ display: flex;
 flex-direction: row;
 
 }
-
+img {
+  
+  margin-top: 13px;
+}
+.cambiarmargentop{
+  margin-top: 3px;
+}
 .cartlogo{
     size: 50px;
 }
