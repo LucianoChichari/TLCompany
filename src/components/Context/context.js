@@ -31,7 +31,7 @@ export const Cartprovider = ({children}) =>{
       console.log("COUNTER ITEMS: ", counteritems)
     };
 
-    const cartRemove = (producto, cantidad)=>{
+    const  cartRemove= (producto, cantidad)=>{
       setCountersItems( counteritems - cantidad )
       let productoAEliminar = cart.find(x => x.id === producto.id)
         let carritoModificado = [...cart]

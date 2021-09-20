@@ -30,6 +30,7 @@ const CartWidget = () => {
                 </Link>
                 </>
                 }
+                
 
     </div>
     )}

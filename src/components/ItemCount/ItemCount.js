@@ -23,7 +23,7 @@ export function ItemCount({item, onAdd}){
         addCart(item,counter)
 
     };
-    
+
     
 
     return (
@@ -34,7 +34,7 @@ export function ItemCount({item, onAdd}){
             {counter}
           </Card.Text>
           
-          <Button onClick={Increment} disabled={counter >= 20} className="btn btn-light btn-outline-secondary border-0" >+</Button>
+          <Button onClick={Increment} disabled={counter >= item.stock} className="btn btn-light btn-outline-secondary border-0" >+</Button>
           <Button onClick={Decrement}  disabled={counter <= 0} className="btn btn-light btn-outline-secondary border-0">-</Button>
 
           {load? <Button onClick={onAddCart} className="btn btn-light btn-outline-secondary border-0">Agregar al carrito</Button>:

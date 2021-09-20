@@ -1,5 +1,6 @@
 import CartWidget from '../CartWidget/CartWidget';
 import "./CartItem.css"
+import { Link } from 'react-router-dom';
 import React,{useEffect, useContext} from "react";
 const CartItem = ({item, cartDelete, cartRemove, cartAddOne}) => {
     
@@ -16,6 +17,7 @@ const CartItem = ({item, cartDelete, cartRemove, cartAddOne}) => {
         cartAddOne(item, 1)
     }
     return (
+        
         <div className="cart_section">
         <div className="container-fluid">
         <div className="row">
@@ -58,19 +60,27 @@ const CartItem = ({item, cartDelete, cartRemove, cartAddOne}) => {
                             <div className="order_total_amount">{item.precio*item.quantity}</div>
                         </div>
                     </div>
+                    
+                    
+                    
                     <div className="cart_buttons">
+                    <button type="button" className="button cart_button_checkout"><Link to="/pago" className="navbar-item">Comprar</Link></button>
+                    
                     <button onClick={cartRemoveFromCartItem} type="button" className="button cart_button_clear" >Sacar Unidad</button>
                     <button onClick={cartAddForCartItem} type="button" className="button cart_button_clear">Agregar Unidad</button> 
                     <button onClick={cartDeleteFromCartItem} type="button" className="button cart_button_checkout">Borrar</button> </div>
+                    
                 </div>
             </div>
         </div>
     </div>
+   
     <a href="#" class="float">
 <i class="fa fa-plus my-float"></i>
 <i>      <CartWidget/> </i>
 
 </a>
+
 </div>
     )
 }
