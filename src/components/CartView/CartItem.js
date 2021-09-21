@@ -16,6 +16,7 @@ const CartItem = ({item, cartDelete, cartRemove, cartAddOne}) => {
     const cartAddForCartItem = () =>{
         cartAddOne(item, 1)
     }
+    
     return (
         
         <div className="cart_section">
